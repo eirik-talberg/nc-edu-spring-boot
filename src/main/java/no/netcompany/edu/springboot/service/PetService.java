@@ -12,7 +12,8 @@ public class PetService {
     private final PetRepository repository;
 
     public Pet getPetById(final Long id) {
-        return repository.findById(id).orElse(null);
+        return repository.findById(id)
+                .orElse(null);
     }
 
     @Inject
