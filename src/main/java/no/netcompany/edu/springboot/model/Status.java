@@ -10,6 +10,10 @@ public enum Status {
 
     private final String value;
 
+    public String getValue() {
+        return value;
+    }
+
     Status(final String value) {
         this.value = value;
     }

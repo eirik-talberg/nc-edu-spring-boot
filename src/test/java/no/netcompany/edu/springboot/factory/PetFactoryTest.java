@@ -1,5 +1,8 @@
 package no.netcompany.edu.springboot.factory;
 
+import no.netcompany.edu.springboot.api.model.PetDto;
+import no.netcompany.edu.springboot.model.Pet;
+import no.netcompany.edu.springboot.model.Status;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -19,11 +22,18 @@ class PetFactoryTest {
 
     @Test
     public void toPetDto_producesValidObject() {
-        // Create the input object
+        final Pet pet = new Pet();
+        pet.setId(1L);
+        pet.setStatus(Status.AVAILABLE);
+        pet.setName("Fido");
+        pet.setCategory("Dog");
 
-        // Call the factory
+        final PetDto dto = factory.toPetDto(pet);
 
-        // Verify the result
+        assertEquals(1L, dto.getId());
+        assertEquals(PetDto.StatusEnum.AVAILABLE, dto.getStatus());
+        assertEquals("Fido", dto.getName());
+        assertEquals("Dog", dto.getCategory().getName());
     }
 
 }
