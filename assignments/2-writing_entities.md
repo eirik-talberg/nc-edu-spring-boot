@@ -15,3 +15,5 @@ I have written a nearly empty class to get ut started, it is located at `no.netc
 Finish this class by adding all the data described in the transport model, which you can find in
 `target/classes/no/netcompany/edu/springboot/api/model/PetDto.class` or by looking at the swagger file. 
 
+Note: For now, the `Category` field can be a String, and you can ignore Tags and PhotoUrls. 
+
