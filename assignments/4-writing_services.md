@@ -6,7 +6,13 @@ a clean interface for the various controllers to access and use. A function is t
 
 ## Complete the Pet service layer
 Look at the functions of the Pet API. What service layer functions do we need? Write some functions 
-to support the operations described by the API. 
+to support the operations described by the API. You may need to add some new repository functions as well,
+using the `@Query` annotation. Here's a guide: https://www.baeldung.com/spring-boot-testing
+
+Write service layer functions for these operations:
+- Add pet
+- Delete pet
+- Find pets by status
 
 Remember to also write unit tests! They will help you root out bugs and map out the correct behavior. 
 Is you function very difficult to test? Maybe you should rethink how it is designed. 
