@@ -47,7 +47,7 @@ paths:
           description: "Pet object that needs to be added to the store"
           required: true
           schema:
-            $ref: "#/definitions/Pet"
+            $ref: "#/definitions/PetDto"
       responses:
         405:
           description: "Invalid input"
@@ -73,7 +73,7 @@ paths:
           description: "Pet object that needs to be added to the store"
           required: true
           schema:
-            $ref: "#/definitions/Pet"
+            $ref: "#/definitions/PetDto"
       responses:
         400:
           description: "Invalid ID supplied"
@@ -115,7 +115,7 @@ paths:
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/Pet"
+              $ref: "#/definitions/PetDto"
         400:
           description: "Invalid status value"
       security:
@@ -147,7 +147,7 @@ paths:
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/Pet"
+              $ref: "#/definitions/PetDto"
         400:
           description: "Invalid tag value"
       security:
@@ -176,7 +176,7 @@ paths:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Pet"
+            $ref: "#/definitions/PetDto"
         400:
           description: "Invalid ID supplied"
         404:
@@ -320,12 +320,12 @@ paths:
           description: "order placed for purchasing the pet"
           required: true
           schema:
-            $ref: "#/definitions/Order"
+            $ref: "#/definitions/OrderDto"
       responses:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Order"
+            $ref: "#/definitions/OrderDto"
         400:
           description: "Invalid Order"
   /store/order/{orderId}:
@@ -351,7 +351,7 @@ paths:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Order"
+            $ref: "#/definitions/OrderDto"
         400:
           description: "Invalid ID supplied"
         404:
@@ -394,7 +394,7 @@ paths:
           description: "Created user object"
           required: true
           schema:
-            $ref: "#/definitions/User"
+            $ref: "#/definitions/UserDto"
       responses:
         default:
           description: "successful operation"
@@ -416,7 +416,7 @@ paths:
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/User"
+              $ref: "#/definitions/UserDto"
       responses:
         default:
           description: "successful operation"
@@ -438,7 +438,7 @@ paths:
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/User"
+              $ref: "#/definitions/UserDto"
       responses:
         default:
           description: "successful operation"
@@ -513,7 +513,7 @@ paths:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/User"
+            $ref: "#/definitions/UserDto"
         400:
           description: "Invalid username supplied"
         404:
@@ -538,7 +538,7 @@ paths:
           description: "Updated user object"
           required: true
           schema:
-            $ref: "#/definitions/User"
+            $ref: "#/definitions/UserDto"
       responses:
         400:
           description: "Invalid user supplied"
@@ -577,7 +577,7 @@ securityDefinitions:
     name: "api_key"
     in: "header"
 definitions:
-  Order:
+  OrderDto:
     type: "object"
     properties:
       id:
@@ -604,7 +604,7 @@ definitions:
         default: false
     xml:
       name: "Order"
-  Category:
+  CatoryDto:
     type: "object"
     properties:
       id:
@@ -614,7 +614,7 @@ definitions:
         type: "string"
     xml:
       name: "Category"
-  User:
+  UserDto:
     type: "object"
     properties:
       id:
@@ -638,7 +638,7 @@ definitions:
         description: "User Status"
     xml:
       name: "User"
-  Tag:
+  TagDto:
     type: "object"
     properties:
       id:
@@ -648,7 +648,7 @@ definitions:
         type: "string"
     xml:
       name: "Tag"
-  Pet:
+  PetDto:
     type: "object"
     required:
       - "name"
@@ -658,7 +658,7 @@ definitions:
         type: "integer"
         format: "int64"
       category:
-        $ref: "#/definitions/Category"
+        $ref: "#/definitions/CatoryDto"
       name:
         type: "string"
         example: "doggie"
@@ -675,7 +675,7 @@ definitions:
           name: "tag"
           wrapped: true
         items:
-          $ref: "#/definitions/Tag"
+          $ref: "#/definitions/TagDto"
       status:
         type: "string"
         description: "pet status in the store"

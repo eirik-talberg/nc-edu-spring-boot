@@ -17,7 +17,7 @@ public class PetService {
     }
 
     @Inject
-    public PetService(PetRepository repository) {
+    public PetService(final PetRepository repository) {
         this.repository = repository;
     }
 }
