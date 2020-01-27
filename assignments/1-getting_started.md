@@ -1,4 +1,6 @@
 # 1) Getting started
+This project requires Java 11 and is intended to be written using IntelliJ Ultimate.
+
 ## Getting the code
 First, you must clone this project, you can use the following command (from GitHub): 
 
