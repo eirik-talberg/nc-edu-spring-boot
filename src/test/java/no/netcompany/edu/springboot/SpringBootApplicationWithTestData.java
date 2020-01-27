@@ -1,6 +1,7 @@
 package no.netcompany.edu.springboot;
 
 import no.netcompany.edu.springboot.model.Pet;
+import no.netcompany.edu.springboot.model.Status;
 import no.netcompany.edu.springboot.repository.PetRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,9 +22,20 @@ public class SpringBootApplicationWithTestData {
 
     @EventListener
     public void addDummyData(final ApplicationReadyEvent event) {
+
         IntStream.of(10)
-                .mapToObj(i -> new Pet())
+                .mapToObj(i -> createPet())
                 .forEach(repository::save);
+    }
+
+    private static Pet createPet() {
+        final var pet =  new Pet();
+
+        pet.setCategory("Dog");
+        pet.setName("Fido");
+        pet.setStatus(Status.AVAILABLE);
+
+        return pet;
     }
 
     @Inject
