@@ -37,9 +37,7 @@ paths:
       operationId: "addPet"
       consumes:
         - "application/json"
-        - "application/xml"
       produces:
-        - "application/xml"
         - "application/json"
       parameters:
         - in: "body"
@@ -63,9 +61,7 @@ paths:
       operationId: "updatePet"
       consumes:
         - "application/json"
-        - "application/xml"
       produces:
-        - "application/xml"
         - "application/json"
       parameters:
         - in: "body"
@@ -93,7 +89,6 @@ paths:
       description: "Multiple status values can be provided with comma separated strings"
       operationId: "findPetsByStatus"
       produces:
-        - "application/xml"
         - "application/json"
       parameters:
         - name: "status"
@@ -130,7 +125,7 @@ paths:
       description: "Muliple tags can be provided with comma separated strings. Use         tag1, tag2, tag3 for testing."
       operationId: "findPetsByTags"
       produces:
-        - "application/xml"
+        - 
         - "application/json"
       parameters:
         - name: "tags"
@@ -163,7 +158,6 @@ paths:
       description: "Returns a single pet"
       operationId: "getPetById"
       produces:
-        - "application/xml"
         - "application/json"
       parameters:
         - name: "petId"
@@ -192,7 +186,6 @@ paths:
       consumes:
         - "application/x-www-form-urlencoded"
       produces:
-        - "application/xml"
         - "application/json"
       parameters:
         - name: "petId"
@@ -225,7 +218,6 @@ paths:
       description: ""
       operationId: "deletePet"
       produces:
-        - "application/xml"
         - "application/json"
       parameters:
         - name: "api_key"
@@ -312,7 +304,6 @@ paths:
       description: ""
       operationId: "placeOrder"
       produces:
-        - "application/xml"
         - "application/json"
       parameters:
         - in: "body"
@@ -336,7 +327,6 @@ paths:
       description: "For valid response try integer IDs with value >= 1 and <= 10.         Other values will generated exceptions"
       operationId: "getOrderById"
       produces:
-        - "application/xml"
         - "application/json"
       parameters:
         - name: "orderId"
@@ -363,7 +353,6 @@ paths:
       description: "For valid response try integer IDs with positive integer value.         Negative or non-integer values will generate API errors"
       operationId: "deleteOrder"
       produces:
-        - "application/xml"
         - "application/json"
       parameters:
         - name: "orderId"
@@ -386,7 +375,6 @@ paths:
       description: "This can only be done by the logged in user."
       operationId: "createUser"
       produces:
-        - "application/xml"
         - "application/json"
       parameters:
         - in: "body"
@@ -406,7 +394,7 @@ paths:
       description: ""
       operationId: "createUsersWithArrayInput"
       produces:
-        - "application/xml"
+        - 
         - "application/json"
       parameters:
         - in: "body"
@@ -428,7 +416,7 @@ paths:
       description: ""
       operationId: "createUsersWithListInput"
       produces:
-        - "application/xml"
+        - 
         - "application/json"
       parameters:
         - in: "body"
@@ -450,7 +438,7 @@ paths:
       description: ""
       operationId: "loginUser"
       produces:
-        - "application/xml"
+        - 
         - "application/json"
       parameters:
         - name: "username"
@@ -487,7 +475,6 @@ paths:
       description: ""
       operationId: "logoutUser"
       produces:
-        - "application/xml"
         - "application/json"
       parameters: []
       responses:
@@ -501,7 +488,6 @@ paths:
       description: ""
       operationId: "getUserByName"
       produces:
-        - "application/xml"
         - "application/json"
       parameters:
         - name: "username"
@@ -525,7 +511,6 @@ paths:
       description: "This can only be done by the logged in user."
       operationId: "updateUser"
       produces:
-        - "application/xml"
         - "application/json"
       parameters:
         - name: "username"
@@ -551,7 +536,6 @@ paths:
       description: "This can only be done by the logged in user."
       operationId: "deleteUser"
       produces:
-        - "application/xml"
         - "application/json"
       parameters:
         - name: "username"
