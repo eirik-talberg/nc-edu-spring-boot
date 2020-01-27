@@ -17,7 +17,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<springfox-swagger.version>2.9.2</springfox-swagger.version>
-		<swagger-codegen.version>2.4.3</swagger-codegen.version>
+		<swagger-codegen.version>2.4.8</swagger-codegen.version>
 
 	</properties>
 
@@ -85,13 +85,14 @@
 						<configuration>
 							<inputSpec>swagger/api-spec.yml</inputSpec>
 							<language>spring</language>
+							<library>spring-boot</library>
 							<configOptions>
 								<sourceFolder>src/gen/java/main</sourceFolder>
 								<modelPackage>no.netcompany.edu.springboot.api.model</modelPackage>
 								<apiPackage>no.netcompany.edu.springboot.api</apiPackage>
-								<library>spring-boot</library>
 								<interfaceOnly>true</interfaceOnly>
 								<useTags>false</useTags>
+								<java8>false</java8>
 								<dateLibrary>java8</dateLibrary>
 							</configOptions>
 						</configuration>
