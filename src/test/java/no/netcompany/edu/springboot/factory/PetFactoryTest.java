@@ -1,5 +1,6 @@
 package no.netcompany.edu.springboot.factory;
 
+import no.netcompany.edu.springboot.api.model.CategoryDto;
 import no.netcompany.edu.springboot.api.model.PetDto;
 import no.netcompany.edu.springboot.model.Pet;
 import no.netcompany.edu.springboot.model.Status;
@@ -34,6 +35,21 @@ class PetFactoryTest {
         assertEquals(PetDto.StatusEnum.AVAILABLE, dto.getStatus());
         assertEquals("Fido", dto.getName());
         assertEquals("Dog", dto.getCategory().getName());
+    }
+
+    @Test
+    public void toPet_producesValidObject() {
+        final PetDto dto = new PetDto()
+                .category(new CategoryDto().name("Dog"))
+                .name("Fido")
+                .status(PetDto.StatusEnum.AVAILABLE);
+
+        final Pet pet = factory.toPet(dto);
+
+        assertNull(pet.getId());
+        assertEquals("Dog", pet.getCategory());
+        assertEquals(Status.AVAILABLE, pet.getStatus());
+        assertEquals("Fido", pet.getName());
     }
 
 }
